@@ -1,1 +1,2 @@
 AI-D-D/WEEK_6/TASK_FOLDER/sales_data.xls filter=lfs diff=lfs merge=lfs -text
+sales_data.xls filter=lfs diff=lfs merge=lfs -text
