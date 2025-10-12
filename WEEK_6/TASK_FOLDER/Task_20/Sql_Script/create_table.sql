@@ -1,0 +1,78 @@
+-- CREATE TABLE Authors(
+-- author_id int PRIMARY KEY,
+-- author_name VARCHAR NOT NULL,
+-- Country_of_Origin VARCHAR NOT NULL,
+-- Number_of_books_written int
+-- );
+-- CREATE TABLE Books(
+-- Book_id int PRIMARY KEY,
+-- Title VARCHAR NOT NULL,
+-- author_id int REFERENCES Authors(author_id) ,
+-- Genre VARCHAR NOT NULL,
+-- Date_of_Publication date,
+-- Publisher VARCHAR NOT NULL,
+-- ISBN VARCHAR NOT NULL,
+-- Language VARCHAR NOT NULL,
+-- Available_Copies int,
+-- Age_Rating VARCHAR NOT NULL
+-- );
+-- DROP TYPE IF EXISTS Fulfillment_Status CASCADE;
+-- CREATE TYPE Fulfillment_Status as ENUM('processing','pending','fulfilled');
+-- CREATE TABLE BookOrders(
+-- Order_ID int PRIMARY KEY,
+-- Order_Date date,
+-- Book_id int REFERENCES Books(Book_id),
+-- Cost decimal,
+-- Quantity int,
+-- SupplyDate date,
+-- Fulfillment_Status Fulfillment_Status DEFAULT 'processing',
+-- Supplier_Name VARCHAR NOT NULL
+-- );
+
+-- DROP TYPE IF EXISTS gender CASCADE;
+-- DROP TYPE IF EXISTS type_of_membership CASCADE;
+-- DROP TYPE IF EXISTS status CASCADE;
+-- CREATE TYPE status as ENUM('active','suspended');
+-- CREATE TYPE type_of_membership as ENUM('premium','standard','student');
+-- CREATE TYPE gender as ENUM('MALE','FEMALE');
+-- CREATE TABLE Members(
+-- member_id int PRIMARY KEY,
+-- name VARCHAR NOT NULL,
+-- gender gender NOT NULL,
+-- email_address VARCHAR NOT NULL,
+-- phone_number VARCHAR NOT NULL,
+-- address VARCHAR NOT NULL,
+-- age int,
+-- type_of_membership type_of_membership DEFAULT 'student',
+-- date_of_membership date,
+-- status status DEFAULT 'active'
+
+-- );
+
+-- CREATE TABLE Borrow_History(
+-- borrowed_id int primary key,
+-- Book_id int references Books(Book_id),
+-- member_id int references Members(member_id),
+-- borrow_date date,
+-- return_date date
+-- );
+
+-- CREATE TABLE Departments(
+-- dept_id int primary key,
+-- department_name varchar not null,
+-- manager_name varchar not null
+-- )
+
+-- CREATE TABLE Library_staff(
+-- staff_id int primary key,
+-- name varchar not null,
+-- job_title varchar not null,
+-- department_id int references Departments(dept_id),
+-- gender gender not null,
+-- address varchar not null,
+-- phone_number varchar not null,
+-- hire_date date,
+-- manager_id int
+-- )
+
+
