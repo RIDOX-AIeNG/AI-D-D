@@ -147,15 +147,15 @@
 -- ORDER BY staff_count DESC;
 
 --Q12.--> Generate a report showing monthly borrowing trends for the past year (count of books borrowed per month).
-SELECT
-	TO_CHAR(borrow_date, 'Month') AS month_name,
-	EXTRACT(YEAR FROM borrow_date) AS YEAR,
-	COUNT(*) AS total_borrowed_books
-FROM borrow_history
-GROUP BY
-	YEAR, month_name, EXTRACT(MONTH FROM borrow_date)
-ORDER BY
-	YEAR, EXTRACT(MONTH FROM borrow_date);
+-- SELECT
+-- 	TO_CHAR(borrow_date, 'Month') AS month_name,
+-- 	EXTRACT(YEAR FROM borrow_date) AS YEAR,
+-- 	COUNT(*) AS total_borrowed_books
+-- FROM borrow_history
+-- GROUP BY
+-- 	YEAR, month_name, EXTRACT(MONTH FROM borrow_date)
+-- ORDER BY
+-- 	YEAR, EXTRACT(MONTH FROM borrow_date);
 
 -- **Q13.** Find authors whose books have been borrowed more than 10 times in total, along with their most popular book.
 -- WITH borrow_counts AS (
